@@ -1,0 +1,38 @@
+ver terreno legal en materia de NetMed
+	SHould i create a new appllication from scratch
+	Or should i make it so that the application resembles or dowright rips
+off the original one?
+llamar a Omaha
+	y que le voy a preguntar???
+Conocer las verdaderas necesidades
+	Hay otras necesidades que esten ligadas a la aplicacion medica
+	Mi aplicacion esta enfocada hacia los medicos o hacia los pacientes
+	Podria usar el ipad 
+	FUCK WHY NOT MAKE IT A WEBSITE!!
+
+	Comunicacion entre paciente medico por WA??
+	Los tabs que Daniel me ha comentado acerca de (expediente medico) son necesarios??
+	como sera el chat? se cobra por mensaje o se obtiene 
+chcar la aplicacion de NetMed
+disenar ui
+que servicios ofrezco
+cuales son mis puntos debiles
+existe esa madre?
+temas a desarrollar de las materias
+	###QUE NECESITO SABER ANTES DE ESTO###
+		Va a haber expediente?
+		El chat va a estar encriptado
+		Necesito un servidor?
+		Que clase de servidor?
+db encryption etc
+apply the object class and function methodology. Organize every concept on categories and subcategories
+marketing?
+Market research??
+focus on the short term stuff instead of the long one 
+
+####School Stuff#####
+	A que personas les necesito hablar para la aplicacion.
+	Esta pregunta se responde con: Que necesito saber de cada rubro de la
+aplicacion para generar una nueva
+Mandar el correo a Carlos
+
