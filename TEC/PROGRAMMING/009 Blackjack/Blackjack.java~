@@ -1,4 +1,6 @@
 // https://en.wikipedia.org/wiki/Box-drawing_character
+// https://en.wikipedia.org/wiki/Playing_cards_in_Unicode
+// 🂡
 //Game starts when you sit down
 //
 //Bets are placed
@@ -93,18 +95,10 @@ class money
 	def bet (bet, funds)
 		newfunds = funds - bet
 		return newfunds
-
-
-		
-
-				
-				
-			
-
- 	
 */
 import java.util.Scanner;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Blackjack{
 	
@@ -113,6 +107,8 @@ public class Blackjack{
 
 		Scanner scan = new Scanner(System.in);
 		UI ui = new UI();
+		Money money = new Money();
+		Cards cards = new Cards();
 		double funds = 500;
 		double fee = 25;
 		double bet = 0;
@@ -125,40 +121,54 @@ public class Blackjack{
 		scan.next();
 		System.out.print(ui.flush);
 		System.out.println(ui.pad + "Funds: " + funds);
-		System.out.println("Your Cards:" + getcards() + " " + getcards());
-			
+		//System.out.println("Your Cards:" + cards.getcard() + " " + cards.getcard());
+		while (true){
+			cards.setCardnumber();
+			System.out.println(cards.getCard() + "   " +  Integer.toString(cards.getCardnumber()));
 			}
+		}
 
-
-class Money{
-
-	public double payout(double bet, double funds, double multiplier){
-		
-		double newfunds = bet * multiplier;
-		return newfunds;
-
-	}
-
-	public double bet(double bet, double funds){
-		double newfunds = funds - bet;
-		return newfunds;
-
-	}
+	
+static class Money {
+    public static double payout(double bet, double funds, double multiplier) {
+        double newfunds = bet * multiplier;
+        return newfunds;
+    }
+    public static double bet(double bet, double funds) {
+        double newfunds = funds - bet;
+        return newfunds;
+    }
 }	
-class cards{
 
-	public int getcards(){
-		
-		Random random = new Random();	
-		int cardnumber = random.nextInt(10);
-		return cardnumber;
-			
-	}
-	public String getsuit(){
+static class Cards {
+        Random rand = new Random();
+        int cardchoose = 0;
 
-		Random random = new Random();
-		int suitnumber = random.nextInt(4);
-	}
+    public void  setCardnumber(){
+        this.cardchoose = rand.nextInt(12);
+    }
+
+    public int getCardnumber(){
+	    return 1 + this.cardchoose;
+    }
+
+    public String getCard() {
+	String [] spa = {"🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫","🂭","🂮"}; 
+	String [] hea = {"🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻","🂽","🂾"}; 
+	String [] dia = {"🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋","🃍","🃎"}; 
+	String [] clu = {"🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛","🃝","🃞"}; 
+
+	switch (rand.nextInt(4)) {
+            case 0:
+                return spa[cardchoose];
+            case 1:
+                return hea[cardchoose];
+            case 2:
+                return dia[cardchoose];
+            default:
+                return clu[cardchoose];
+        }
+    }
 }
 static class UI{
 
@@ -191,14 +201,14 @@ static class UI{
 		System.getProperty("line.separator") + 
 		System.getProperty("line.separator") + 
 		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
 		System.getProperty("line.separator");
 
-	String instructions = "This is an old school Blackjack game. You need to type the commands to continue.";
+	String instructions = "This is an old school Blackjack game. You need to type the commands manually to play.";
 
-	String sitdown = "Please sit down at the table to begin the game.";
+	String sitdown = "Please SIT DOWN at the table to begin the game.";
 
-	String options = "Options:" + System.getProperty("line.separator") + 
+	String options = 
+		"Options:" + System.getProperty("line.separator") + 
 		"STAy" + System.getProperty("line.separator") +
 		"Hit Again" + System.getProperty("line.separator") +
 		"SUrrender" + System.getProperty("line.separator") +
