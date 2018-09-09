@@ -1,8 +1,3 @@
-//OSCAR VARGAS PEREZ
-//A01657110
-//8/9/2018
-//
-//
 //Given a non negative number "num", return true if num is within 2 of a multiple of 10
 //or false otherwise
 import java.util.Scanner;
