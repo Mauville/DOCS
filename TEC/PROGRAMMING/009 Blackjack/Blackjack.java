@@ -116,20 +116,23 @@ public class Blackjack{
 		System.out.println(ui.pad + ui.header);
 		Thread.sleep(4000);
 		System.out.print(ui.flush);
-		System.out.println(ui.pad + ui.instructions);
-		System.out.println(ui.sitdown);
-		scan.next();
-		System.out.print(ui.flush);
-		System.out.println(ui.pad + "Funds: " + funds);
-		//System.out.println("Your Cards:" + cards.getcard() + " " + cards.getcard());
-		while (true){
-			cards.setCardnumber();
-			System.out.println(cards.getCard() + "   " +  Integer.toString(cards.getCardnumber()));
-			}
+		//print ui
+		System.out.print(ui.topui);
+		cards.setCardnumber();
+		System.out.println(ui.rpad + cards.getCard() +  "🂠 ");
+		System.out.println(ui.medpad);
+		System.out.println(ui.rpad + cards.getCard() +  cards.getCard());
+		System.out.println(ui.medui);
+		System.out.println(ui.betpad + "Funds: " + funds + "$"  + "   " + "Bet: " + "TODO");
+		System.out.println(ui.lowui);
+
+
+
 		}
+}
 
 	
-static class Money {
+class Money {
     public static double payout(double bet, double funds, double multiplier) {
         double newfunds = bet * multiplier;
         return newfunds;
@@ -140,7 +143,7 @@ static class Money {
     }
 }	
 
-static class Cards {
+class Cards {
         Random rand = new Random();
         int cardchoose = 0;
 
@@ -153,10 +156,10 @@ static class Cards {
     }
 
     public String getCard() {
-	String [] spa = {"🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫","🂭","🂮"}; 
-	String [] hea = {"🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻","🂽","🂾"}; 
-	String [] dia = {"🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋","🃍","🃎"}; 
-	String [] clu = {"🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛","🃝","🃞"}; 
+	String [] spa = {"🂡 ", "🂢 ", "🂣 ", "🂤 ", "🂥 ", "🂦 ", "🂧 ", "🂨 ", "🂩 ", "🂪 ", "🂫 ","🂭 ","🂮 "}; 
+	String [] hea = {"🂱 ", "🂲 ", "🂳 ", "🂴 ", "🂵 ", "🂶 ", "🂷 ", "🂸 ", "🂹 ", "🂺 ", "🂻 ","🂽 ","🂾 "}; 
+	String [] dia = {"🃁 ", "🃂 ", "🃃 ", "🃄 ", "🃅 ", "🃆 ", "🃇 ", "🃈 ", "🃉 ", "🃊 ", "🃋 ","🃍 ","🃎 "}; 
+	String [] clu = {"🃑 ", "🃒 ", "🃓 ", "🃔 ", "🃕 ", "🃖 ", "🃗 ", "🃘 ", "🃙 ", "🃚 ", "🃛 ","🃝 ","🃞 "}; 
 
 	switch (rand.nextInt(4)) {
             case 0:
@@ -170,18 +173,54 @@ static class Cards {
         }
     }
 }
-static class UI{
+class UI{
+
+	String blackjack = "Blackjack! Your bet was doubled!";
+	String betprompt = "Place your bet:";
+	String over21 = "You went over 21.";
+	String victory = "You win!";
+	String defeat = "You lose";
+	String flush = "\033[H\033[2J";
+	String topui  =  
+	 "                                    ╔╦═══════════════════════════╦╦╗" + System.getProperty("line.separator") +
+	 "                                    ╠╣ ♠ ♣ B L A C K J A C K ♥ ♦ ╠╬╣" + System.getProperty("line.separator") +
+	 "                                    ╠╬╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╬╬╣" + System.getProperty("line.separator") +
+	 "                                    ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝" + System.getProperty("line.separator") +
+	 "                                                DEALER                   " + System.getProperty("line.separator");
+	String medpad = 
+		System.getProperty("line.separator") + 
+		System.getProperty("line.separator") + 
+		System.getProperty("line.separator") + 
+		System.getProperty("line.separator") ;
+
+	String medui = 
+	 "                                                 YOU            " + System.getProperty("line.separator") +
+	 "                                    ╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗" + System.getProperty("line.separator") +
+	 "                                    ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝" ;
+
+	String lowui = 
+	 "                                        Options: " + System.getProperty("line.separator") +
+	 "                                          1) Stay" + System.getProperty("line.separator") +
+	 "                                          2) Hit Again" + System.getProperty("line.separator") +
+	 "                                          3) Double Bet" + System.getProperty("line.separator") +
+	 "                                          4) Surrender" + System.getProperty("line.separator") +
+	 "                                          5) Quit" + System.getProperty("line.separator") +
+	 "                                   ╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗" + System.getProperty("line.separator") +
+	 "                                   ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝" + System.getProperty("line.separator");
+
+	String rpad = "                                           ";
+	String betpad = "                                      ";
 
 	//For small screens(i.e. mine) Fancy way of writing blackjack
 	String header = 
-		"  /$$$$$$$  /$$        /$$$$$$   /$$$$$$  /$$   /$$    /$$$$$  /$$$$$$   /$$$$$$  /$$   /$$" + System.getProperty("line.separator") + 
- 		" | $$__  $$| $$       /$$__  $$ /$$__  $$| $$  /$$/   |__  $$ /$$__  $$ /$$__  $$| $$  /$$/ " + System.getProperty("line.separator") + 
- 		" | $$  \\ $$| $$      | $$  \\ $$| $$  \\__/| $$ /$$/       | $$| $$  \\ $$| $$  \\__/| $$ /$$/  " + System.getProperty("line.separator") + 
- 		" | $$$$$$$ | $$      | $$$$$$$$| $$      | $$$$$/        | $$| $$$$$$$$| $$      | $$$$$/   " + System.getProperty("line.separator") + 
- 		" | $$__  $$| $$      | $$__  $$| $$      | $$  $$   /$$  | $$| $$__  $$| $$      | $$  $$   " + System.getProperty("line.separator") + 
- 		" | $$  \\ $$| $$      | $$  | $$| $$    $$| $$\\  $$ | $$  | $$| $$  | $$| $$    $$| $$\\  $$  " + System.getProperty("line.separator") + 
- 		" | $$$$$$$/| $$$$$$$$| $$  | $$|  $$$$$$/| $$ \\  $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$ \\  $$ " + System.getProperty("line.separator") + 
- 		" |_______/ |________/|__/  |__/ \\______/ |__/  \\__/ \\______/ |__/  |__/ \\______/ |__/  \\__/ " + System.getProperty("line.separator");
+		"     /$$$$$$$  /$$        /$$$$$$   /$$$$$$  /$$   /$$    /$$$$$  /$$$$$$   /$$$$$$  /$$   /$$" + System.getProperty("line.separator") + 
+ 		"    | $$__  $$| $$       /$$__  $$ /$$__  $$| $$  /$$/   |__  $$ /$$__  $$ /$$__  $$| $$  /$$/ " + System.getProperty("line.separator") + 
+ 		"    | $$  \\ $$| $$      | $$  \\ $$| $$  \\__/| $$ /$$/       | $$| $$  \\ $$| $$  \\__/| $$ /$$/  " + System.getProperty("line.separator") + 
+ 		"    | $$$$$$$ | $$      | $$$$$$$$| $$      | $$$$$/        | $$| $$$$$$$$| $$      | $$$$$/   " + System.getProperty("line.separator") + 
+ 		"    | $$__  $$| $$      | $$__  $$| $$      | $$  $$   /$$  | $$| $$__  $$| $$      | $$  $$   " + System.getProperty("line.separator") + 
+ 		"    | $$  \\ $$| $$      | $$  | $$| $$    $$| $$\\  $$ | $$  | $$| $$  | $$| $$    $$| $$\\  $$  " + System.getProperty("line.separator") + 
+ 		"    | $$$$$$$/| $$$$$$$$| $$  | $$|  $$$$$$/| $$ \\  $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$ \\  $$ " + System.getProperty("line.separator") + 
+ 		"    |_______/ |________/|__/  |__/ \\______/ |__/  \\__/ \\______/ |__/  |__/ \\______/ |__/  \\__/ " + System.getProperty("line.separator");
 
 
 	String pad = 
@@ -194,60 +233,5 @@ static class UI{
 		System.getProperty("line.separator") + 
 		System.getProperty("line.separator") + 
 		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
 		System.getProperty("line.separator");
-
-	String instructions = "This is an old school Blackjack game. You need to type the commands manually to play.";
-
-	String sitdown = "Please SIT DOWN at the table to begin the game.";
-
-	String options = 
-		"Options:" + System.getProperty("line.separator") + 
-		"STAy" + System.getProperty("line.separator") +
-		"Hit Again" + System.getProperty("line.separator") +
-		"SUrrender" + System.getProperty("line.separator") +
-		"Double Bet" + System.getProperty("line.separator") +
-		"Quit";
-
-	String blackjack = "Blackjack! Your bet was doubled!";
-	String betprompt = "Place your bet:";
-	String over21 = "You went over 21.";
-	String victory = "You win!";
-	String defeat = "You lose";
-	String flush = "\033[H\033[2J";
-
-	
-	public static String fcard (int number, String suit){
-
-		String fcard = 
-
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator") +
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator") +
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator") +
-	  String.format("▒▒%d%s▒▒",number ,suit) + System.getProperty("line.separator") +
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator") +
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator") +
-			"▒▒▒▒▒▒▒▒" + System.getProperty("line.separator");
-
-		return fcard;
-		}
-
-	String bcard = 
-
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator") +
-		"░░░░░░░░" + System.getProperty("line.separator");
-
-		
-}
 }
