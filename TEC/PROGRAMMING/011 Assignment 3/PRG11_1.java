@@ -1,4 +1,8 @@
+//OSCAR VARGAS PEREZ
+//A01657110
+
 import java.util.Scanner;
+import java.util.Objects;
 
 class PRG11_1{
 	public static void main(String[] args){
@@ -15,24 +19,23 @@ class PRG11_1{
 		double expenses = scan.nextDouble();
 		int chkfee = 0;
 
-		if (chkissued>6 && acctype != "B"){
-			chkfee = (chkissued-6) * 13;
+		if (chkissued>5 && acctype != "B"){
+			chkfee = (chkissued-5) * 13;
 		}else if (acctype == "B"){
 			chkfee = chkissued * 13;
 		}
 
-		double finalbal = (income + prevbal) + ((-1 * expenses) +(-1 * chkfee));
-		//Unreachable
-		if (acctype == "B" && finalbal < 20000){
-			finalbal += finalbal*.075;
+		double finalbal = (income + prevbal) + ((-1 * expenses) +(-1 * chkfee)); 
 
-		}else if (acctype == "R" && finalbal < 15000){
-			finalbal += finalbal*.075;
+		if (Objects.equals(acctype.toLowerCase(), "b") && finalbal < 20000.0){
+			finalbal -= finalbal*.075;
 
-		}else if (acctype == "S" && finalbal < 10000.0){
-			finalbal += finalbal*.075;
+		}else if (Objects.equals(acctype.toLowerCase(), "r") && finalbal < 15000.0){
+			finalbal -= finalbal*.075;
+
+		}else if (Objects.equals(acctype.toLowerCase(), "s")&& finalbal < 10000.0){
+			finalbal -= finalbal*.075;
 		}
-		//Unreachable
 		System.out.println("Final balance: " + finalbal);
 	}
 }
