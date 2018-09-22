@@ -112,126 +112,55 @@ public class Blackjack{
 		double funds = 500;
 		double fee = 25;
 		double bet = 0;
+		String dealercards = "";
+		int dealertotal = 0;
+		String playercards = "";
+		int playertotal = 0;
+		int option = 0;
+
 		System.out.print(ui.flush);
 		System.out.println(ui.pad + ui.header);
 		Thread.sleep(4000);
 		System.out.print(ui.flush);
 		//print ui
-		System.out.print(ui.topui);
-		cards.setCardnumber();
-		System.out.println(ui.rpad + cards.getCard() +  "🂠 ");
-		System.out.println(ui.medpad);
-		System.out.println(ui.rpad + cards.getCard() +  cards.getCard());
-		System.out.println(ui.medui);
-		System.out.println(ui.betpad + "Funds: " + funds + "$"  + "   " + "Bet: " + "TODO");
-		System.out.println(ui.lowui);
+		while (true){
+			funds -= fee;
+			bet += fee;
+			dealercards += cards.getCard();
+			dealertotal += cards.getCardnumber();
+			playercards += cards.getCard();
+			playertotal += cards.getCardnumber();
+			playercards += cards.getCard();
+			playertotal += cards.getCardnumber();
+			while (true){
+			maingui(dealercards, playercards, funds, bet, true);
+			option = scan.nextInt();
+			if(option == 1){
+			       playercards += cards.getCard();
+			       playertotal += cards.getCardnumber();	       
+			       continue;
+			}
 
-
-
+			}
 		}
+	}
+public static void maingui(String dealercards, String playercards, double funds, double bet, boolean firstround){
+		UI ui = new UI();
+		System.out.print(ui.flush);
+		System.out.print(ui.topui);
+		if (firstround = true){
+			System.out.println(ui.rpad + dealercards +  "🂠 ");
+		}else{
+			System.out.println(ui.rpad + dealercards);
+		}
+		System.out.println(ui.medpad);
+		System.out.println(ui.rpad + playercards);
+		System.out.println(ui.medui);
+		System.out.println(ui.betpad + "Funds: " + funds + "$"  + "   " + "Bet: " + bet + "$");
+		System.out.println(ui.lowui);
+	}
 }
 
 	
-class Money {
-    public static double payout(double bet, double funds, double multiplier) {
-        double newfunds = bet * multiplier;
-        return newfunds;
-    }
-    public static double bet(double bet, double funds) {
-        double newfunds = funds - bet;
-        return newfunds;
-    }
-}	
-
-class Cards {
-        Random rand = new Random();
-        int cardchoose = 0;
-
-    public void  setCardnumber(){
-        this.cardchoose = rand.nextInt(12);
-    }
-
-    public int getCardnumber(){
-	    return 1 + this.cardchoose;
-    }
-
-    public String getCard() {
-	String [] spa = {"🂡 ", "🂢 ", "🂣 ", "🂤 ", "🂥 ", "🂦 ", "🂧 ", "🂨 ", "🂩 ", "🂪 ", "🂫 ","🂭 ","🂮 "}; 
-	String [] hea = {"🂱 ", "🂲 ", "🂳 ", "🂴 ", "🂵 ", "🂶 ", "🂷 ", "🂸 ", "🂹 ", "🂺 ", "🂻 ","🂽 ","🂾 "}; 
-	String [] dia = {"🃁 ", "🃂 ", "🃃 ", "🃄 ", "🃅 ", "🃆 ", "🃇 ", "🃈 ", "🃉 ", "🃊 ", "🃋 ","🃍 ","🃎 "}; 
-	String [] clu = {"🃑 ", "🃒 ", "🃓 ", "🃔 ", "🃕 ", "🃖 ", "🃗 ", "🃘 ", "🃙 ", "🃚 ", "🃛 ","🃝 ","🃞 "}; 
-
-	switch (rand.nextInt(4)) {
-            case 0:
-                return spa[cardchoose];
-            case 1:
-                return hea[cardchoose];
-            case 2:
-                return dia[cardchoose];
-            default:
-                return clu[cardchoose];
-        }
-    }
-}
-class UI{
-
-	String blackjack = "Blackjack! Your bet was doubled!";
-	String betprompt = "Place your bet:";
-	String over21 = "You went over 21.";
-	String victory = "You win!";
-	String defeat = "You lose";
-	String flush = "\033[H\033[2J";
-	String topui  =  
-	 "                                    ╔╦═══════════════════════════╦╦╗" + System.getProperty("line.separator") +
-	 "                                    ╠╣ ♠ ♣ B L A C K J A C K ♥ ♦ ╠╬╣" + System.getProperty("line.separator") +
-	 "                                    ╠╬╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╬╬╣" + System.getProperty("line.separator") +
-	 "                                    ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝" + System.getProperty("line.separator") +
-	 "                                                DEALER                   " + System.getProperty("line.separator");
-	String medpad = 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") ;
-
-	String medui = 
-	 "                                                 YOU            " + System.getProperty("line.separator") +
-	 "                                    ╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗" + System.getProperty("line.separator") +
-	 "                                    ╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝" ;
-
-	String lowui = 
-	 "                                        Options: " + System.getProperty("line.separator") +
-	 "                                          1) Stay" + System.getProperty("line.separator") +
-	 "                                          2) Hit Again" + System.getProperty("line.separator") +
-	 "                                          3) Double Bet" + System.getProperty("line.separator") +
-	 "                                          4) Surrender" + System.getProperty("line.separator") +
-	 "                                          5) Quit" + System.getProperty("line.separator") +
-	 "                                   ╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗" + System.getProperty("line.separator") +
-	 "                                   ╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝" + System.getProperty("line.separator");
-
-	String rpad = "                                           ";
-	String betpad = "                                      ";
-
-	//For small screens(i.e. mine) Fancy way of writing blackjack
-	String header = 
-		"     /$$$$$$$  /$$        /$$$$$$   /$$$$$$  /$$   /$$    /$$$$$  /$$$$$$   /$$$$$$  /$$   /$$" + System.getProperty("line.separator") + 
- 		"    | $$__  $$| $$       /$$__  $$ /$$__  $$| $$  /$$/   |__  $$ /$$__  $$ /$$__  $$| $$  /$$/ " + System.getProperty("line.separator") + 
- 		"    | $$  \\ $$| $$      | $$  \\ $$| $$  \\__/| $$ /$$/       | $$| $$  \\ $$| $$  \\__/| $$ /$$/  " + System.getProperty("line.separator") + 
- 		"    | $$$$$$$ | $$      | $$$$$$$$| $$      | $$$$$/        | $$| $$$$$$$$| $$      | $$$$$/   " + System.getProperty("line.separator") + 
- 		"    | $$__  $$| $$      | $$__  $$| $$      | $$  $$   /$$  | $$| $$__  $$| $$      | $$  $$   " + System.getProperty("line.separator") + 
- 		"    | $$  \\ $$| $$      | $$  | $$| $$    $$| $$\\  $$ | $$  | $$| $$  | $$| $$    $$| $$\\  $$  " + System.getProperty("line.separator") + 
- 		"    | $$$$$$$/| $$$$$$$$| $$  | $$|  $$$$$$/| $$ \\  $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$ \\  $$ " + System.getProperty("line.separator") + 
- 		"    |_______/ |________/|__/  |__/ \\______/ |__/  \\__/ \\______/ |__/  |__/ \\______/ |__/  \\__/ " + System.getProperty("line.separator");
 
 
-	String pad = 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator") + 
-		System.getProperty("line.separator");
-}

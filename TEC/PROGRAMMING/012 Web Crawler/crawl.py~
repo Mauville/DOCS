@@ -1,0 +1,14 @@
+#It's essential to identify the goal of our scraping right from the beginning.
+# My goal is getting one page and getting all the hyperrfs on it.
+# Repeat x 911
+#Writing a scraping script can take a lot of time, especially if we want to scrape more than one web page.
+#We want to avoid spending hours writing a script which scrapes data we won't actually need.
+from bs4 import BeautifulSoup
+from requests import get
+
+url = "http://james-camerons-avatar.wikia.com/wiki/Special:Categories?limit=500"
+response = get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+for link in soup.find_all('a'):
+    print link.get('href')
