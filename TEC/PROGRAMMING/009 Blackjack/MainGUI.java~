@@ -1,4 +1,4 @@
-import UI
+import UI;
 
 public static void MainGUI(String dealercards, String playercards, double funds, double bet, boolean firstround){
 		UI ui = new UI();

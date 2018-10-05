@@ -96,9 +96,7 @@ class money
 		newfunds = funds - bet
 		return newfunds
 */
-import java.util.Scanner;
-import java.util.Random;
-import java.util.Arrays;
+import java.util.*;
 
 public class Blackjack{
 	
@@ -113,43 +111,51 @@ public class Blackjack{
 		double fee = 25;
 		double bet = 0;
 		String dealercards = "";
-		int dealertotal = 0;
+		List<Integer> dealertotal = new ArrayList<Integer>();
 		String playercards = "";
-		int playertotal = 0;
+		List<Integer> playernum = new ArrayList<Integer>();
 		int option = 0;
 
 		System.out.print(ui.flush);
 		System.out.println(ui.pad + ui.header);
-		Thread.sleep(4000);
+		Thread.sleep(4/*000*/);
 		System.out.print(ui.flush);
 		//print ui
 		while (true){
 			funds -= fee;
 			bet += fee;
 			dealercards += cards.getCard();
-			dealertotal += cards.getCardnumber();
+			dealertotal.add(cards.getCardnumber());
 			playercards += cards.getCard();
-			playertotal += cards.getCardnumber();
+			//TODO optimize with for loop
+			playernum.add(cards.getCardnumber());
 			playercards += cards.getCard();
-			playertotal += cards.getCardnumber();
+			playernum.add(cards.getCardnumber());
 			while (true){
-			maingui(dealercards, playercards, funds, bet, true);
+			int playersum = playernum.stream().mapToInt(Integer::intValue).sum();
+			maingui(dealercards, playercards, funds, bet, true, playersum);
 			option = scan.nextInt();
+			// Use streams to sum elements inside of arrays
+			// next step is detecting whether its a blackjack, implement winning message and bets
+			if(playersum == 21){
+				maingui(dealercards, playercards, funds, bet, true, 001010101);
+				continue;
+			}
 			if(option == 1){
-			       playercards += cards.getCard();
-			       playertotal += cards.getCardnumber();	       
+			        playercards += cards.getCard();
+				playernum.add(cards.getCardnumber());
 			       continue;
 			}
 
 			}
 		}
 	}
-public static void maingui(String dealercards, String playercards, double funds, double bet, boolean firstround){
+public static void maingui(String dealercards, String playercards, double funds, double bet, boolean firstround, int pt){
 		UI ui = new UI();
 		System.out.print(ui.flush);
 		System.out.print(ui.topui);
 		if (firstround = true){
-			System.out.println(ui.rpad + dealercards +  "🂠 ");
+			System.out.println(ui.rpad + dealercards +  /*"🂠 "*/ pt);
 		}else{
 			System.out.println(ui.rpad + dealercards);
 		}
