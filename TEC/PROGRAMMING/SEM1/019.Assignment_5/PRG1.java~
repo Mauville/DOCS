@@ -1,0 +1,80 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class PRG1{
+	public static void main(String[] args){
+		game();
+	}
+	public static boolean LessOrMore(int secret, int userinput, UI ui){
+		if(userinput > secret){
+		       System.out.println(ui.lower);
+		       return false;
+		}
+
+		if(userinput < secret){
+			System.out.println(ui.higher);
+			return false;
+		}
+
+		if(userinput == secret){
+		       System.out.println(ui.win);	
+		       return true;
+		}
+		return false;
+	
+	}
+	public static void game(){
+		Scanner sc = new Scanner(System.in);
+		UI ui = new UI();
+		Random rd = new Random();
+
+		System.out.println(ui.gamename);
+		System.out.println(ui.firstnumber);
+		int first = sc.nextInt();
+		System.out.println(ui.lastnumber);
+		int second = sc.nextInt();
+		int option = sc.nextInt();
+		int secret = rd.nextInt(second-first) + first + 1;
+		int attempts = 3;
+		ui.setFirst(first);
+		ui.setSecond(second);
+		ui.setSecret(secret);
+		System.out.println(ui.menu);
+
+		if(option == 1){
+			System.out.println(ui.odds);
+			for(int i = first; i <= second; i++){
+				if(i % 2 != 0){
+					System.out.println(i);
+				}
+			}
+		}
+		if(option == 2){
+			System.out.println(ui.pairs);
+			for(int i = first; i <= second; i++){
+				if(i % 2 == 0){
+					System.out.println(i);
+				}
+			}
+		}
+		
+		if(option == 3){
+			System.out.println(ui.gamemenu);
+			int input = 0;
+			boolean win = false;
+			while (attempts > 0 && win == false){
+				input = sc.nextInt();
+				win = LessOrMore(secret, input, ui);
+				attempts--;
+				if (attempts == 0 &&  win == false){
+					System.out.println(ui.fail);
+				}
+			}
+
+		}
+
+		if(option == 4){
+			System.exit(0);
+		}
+	}
+}
