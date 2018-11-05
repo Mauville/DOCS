@@ -20,19 +20,6 @@ if option = switchcols
     input(col1)
     input(col2)
 
-a = np.array([[10, 20, 30, 40, 50],
-              [ 6,  7,  8,  9, 10]])
-
-# Create the permutation matrix by placing 1 at each row with the column to replace with
-your_permutation = [0,4,1,3,2]
-
-perm_mat = np.zeros((len(your_permutation), len(your_permutation)))
-
-for idx, i in enumerate(your_permutation):
-    perm_mat[idx, i] = 1
-
-print np.dot(a, perm_mat)
-
 else option = switch rows
     input(row1)
     input(row2)
@@ -45,3 +32,69 @@ else option = switch rows
 else option = transpose
 else end
  * */
+
+
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
+
+
+class PRG1{
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input number of rows");
+        int rows = sc.nextInt();
+        System.out.println("Input number of columns");
+        int cols = sc.nextInt();
+        int arr [][] = makeMatrix(rows, cols);
+        System.out.println(Arrays.toString(arr));
+        //printMenu();
+        int option = sc.nextInt();
+
+        if(option == 1){
+            System.out.println("Input column 1");
+            int col1 = sc.nextInt();
+            System.out.println("Input column 2");
+            int col2 = sc.nextInt();
+         ///   changeCols(arr,col1, col2);
+
+        }if(option == 2){
+            System.out.println("Input row 1");
+            int row1 = sc.nextInt();
+            System.out.println("Input row 2");
+            int row2 = sc.nextInt();
+           // changeRows(arr, row1, row2);
+
+        }if(option == 3 ){
+            transpose(arr, rows, cols);
+        }else{
+            System.exit(0);
+        }
+    }
+
+    public static int [][] makeMatrix(int rows,int cols){
+        Random rd = new Random();
+        int matrix [][] = new int[rows][cols];
+        for(int eachrow = 0; eachrow<= rows -1; eachrow++){
+            for(int eachind = 0; eachind <= cols; eachind++){
+                matrix[eachrow][eachind] = rd.nextInt(cols);
+            }
+        }
+        return matrix;
+    }
+
+
+    public static void transpose(int arr[][], int rows, int cols){
+        int[][] transposed = new int[cols][rows];
+        for (int eachrow = 0; eachrow <= rows; eachrow++){
+            for(int eachind = 0; eachind <= cols; eachind++){
+                transposed[eachind][eachrow] = arr[eachrow][eachind];
+            }
+        }
+        System.out.println(Arrays.toString(transposed));
+    } 
+}
+
+
+
