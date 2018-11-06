@@ -45,46 +45,60 @@ class PRG1{
         Scanner sc = new Scanner(System.in);
         System.out.println("Input number of rows");
         int rows = sc.nextInt();
+        rows--;
         System.out.println("Input number of columns");
         int cols = sc.nextInt();
+        cols--;
         int arr [][] = makeMatrix(rows, cols);
-        System.out.println(Arrays.toString(arr));
-        //printMenu();
-        int option = sc.nextInt();
+        boolean looptrue = true;
+        int option = 0;
 
-        if(option == 1){
+        while(looptrue = true){
+        printMatrix(arr);
+        printMenu();
+        option = sc.nextInt();
+
+        if (option == 1){
             System.out.println("Input column 1");
             int col1 = sc.nextInt();
+            col1--;
             System.out.println("Input column 2");
             int col2 = sc.nextInt();
-         ///   changeCols(arr,col1, col2);
+            col2--;
+            arr = changeCols(arr,col1, col2, rows);
+            printMatrix(arr);
+
 
         }if(option == 2){
             System.out.println("Input row 1");
             int row1 = sc.nextInt();
+            row1--;
             System.out.println("Input row 2");
             int row2 = sc.nextInt();
-           // changeRows(arr, row1, row2);
+            row2--;
+            arr = changeRows(arr, row1, row2);
+            printMatrix(arr);
 
         }if(option == 3 ){
             transpose(arr, rows, cols);
+
         }else{
-            System.exit(0);
+            looptrue = false;
+        }
         }
     }
-
     public static int [][] makeMatrix(int rows,int cols){
         Random rd = new Random();
+        rows++;
+        cols++;
         int matrix [][] = new int[rows][cols];
-        for(int eachrow = 0; eachrow<= rows -1; eachrow++){
-            for(int eachind = 0; eachind <= cols; eachind++){
-                matrix[eachrow][eachind] = rd.nextInt(cols);
+        for(int eachrow = 0; eachrow< rows; eachrow++){
+            for(int eachind = 0; eachind < cols; eachind++){
+                matrix[eachrow][eachind] = rd.nextInt(cols)+1;
             }
         }
         return matrix;
     }
-
-
     public static void transpose(int arr[][], int rows, int cols){
         int[][] transposed = new int[cols][rows];
         for (int eachrow = 0; eachrow <= rows; eachrow++){
@@ -94,6 +108,34 @@ class PRG1{
         }
         System.out.println(Arrays.toString(transposed));
     } 
+    public static int[][] changeCols(int[][] arr, int col1, int col2, int rows){
+        for(int eachrow = rows; eachrow <= rows; eachrow++){
+            int bkp = arr[eachrow][col1];
+            arr[eachrow][col1] = arr[eachrow][col2];
+            arr[eachrow][col2] = bkp;
+        }
+        return arr;
+    }
+    public static int[][] changeRows(int [][] arr, int row1, int row2){
+        int [] bkp = arr[row1];
+        arr [row1] = arr[row2];
+        arr [row2] = bkp;
+        return arr;
+    }
+    public static void printMatrix(int[][]arr){
+        System.out.println(Arrays.deepToString(arr).replace("], ", "]\n").replace("[[", "[").replace("]]","]"));
+    }
+    public static void printMenu(){
+        System.out.println("**************");
+        System.out.println("1) Switch cols");
+        System.out.println("2) Switch rows");
+        System.out.println("3) Transpose");
+        System.out.println("4) Exit");
+        System.out.println("**************");
+
+    }
+
+
 }
 
 
