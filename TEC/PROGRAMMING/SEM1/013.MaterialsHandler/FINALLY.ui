@@ -274,24 +274,5 @@
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>dbopswrapper()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>330</x>
-     <y>269</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>461</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
- <slots>
-  <slot>dbopswrapper(QLineEdit::text,QLineEdit2::text,comboBox::currentText,comboBox2::currentText)</slot>
- </slots>
 </ui>

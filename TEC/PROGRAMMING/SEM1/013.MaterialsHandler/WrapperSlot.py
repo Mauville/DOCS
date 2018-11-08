@@ -25,6 +25,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
            DBOps.returner(name, matricle, material)
 
 
+
         
 
  
