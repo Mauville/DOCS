@@ -18,8 +18,7 @@ def getdb():
     return db
 
 # Modify availability
-def modAvail(material, modifier):
-    fbdb = getdb()
+def modAvail(material, modifier, fbdb):
     material_ref = fbdb.collection(u'MATS').document(material)
     docs = material_ref.get()
     checkavai = docs.to_dict()
@@ -28,8 +27,7 @@ def modAvail(material, modifier):
     material_ref.update({'Availability': avai})
 
 #Append student to loaners list
-def loaner(name, ID, material):
-    fbdb = getdb()
+def loaner(name, ID, material, fbdb):
     material_ref = fbdb.collection(u'MATS').document(material)
     docs = material_ref.get()
     dbdict = docs.to_dict()
@@ -37,8 +35,7 @@ def loaner(name, ID, material):
     material_ref.update({entry : name})
 
 # Remove student from loaners list
-def returner(name, ID, material):
-    fbdb = getdb()
+def returner(name, ID, material, fbdb):
     material_ref = fbdb.collection(u'MATS').document(material)
     docs = material_ref.get()
     dbdict = docs.to_dict()
@@ -46,49 +43,10 @@ def returner(name, ID, material):
     material_ref.update({entry : firestore.DELETE_FIELD})
 
 # Maintenance Function. Get element list from db
-def elementlist():
-    fbdb = getdb()
+def elementlist(fbdb):
     docs = fbdb.collection(u'MATS').get()
     matlist = []
     for doc in docs:
        matlist.append(doc.id)
     return matlist
 
-#demoer
-#ECHO = 'ECHO'
-#A019292 = 'A019292'
-#
-#modAvail(db, ECHO, -1)
-#loaner(db, ECHO, A019292, "MIKE")
-#sleep(5)
-#returner(db, ECHO, A019292, "MIKE")
-#modAvail(db, ECHO, 1)
-#APPLE WATCH
-#APPLETV
-#DJI PHANTOM QUADCOPTER
-#DOUBLE 2
-#DUALSHOCK 4
-#ECHO
-#FITBIT
-#GALAXY S7
-#GEAR VR
-#HDMI CABLE
-#IPHONE SE
-#KINECT
-#LEAP MOTION
-#LED CUBE
-#LG TV 32"
-#MICRO SD 32GB
-#MYO
-#OCULUS
-#PANONO
-#RASPBERRY PI 3
-#RASPBERRY PI 3 CASE
-#RASPBERRY PI CHARGER
-#SAMSUNG 360
-#SAMSUNG S2
-#SPHERO
-#SPHERO PARK
-#SPHERO RAMPS
-#STANDS
-#

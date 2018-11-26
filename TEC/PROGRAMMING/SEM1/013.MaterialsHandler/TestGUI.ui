@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>609</width>
+    <height>341</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>140</y>
+      <width>122</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Matricula:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>40</y>
+      <width>107</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nombre:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>140</y>
+      <width>109</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Material:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>85</y>
+      <width>301</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>49</x>
+      <y>181</y>
+      <width>214</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>503</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>YXXXXXXXX</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>180</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Amazon Echo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Apple Watch</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Apple TV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DJI Phantom 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DS4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Double 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Estantes</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fitbit</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Galaxy Gear S2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Galaxy S7 Edge</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gear 360</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Gear VR</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>HDMI</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Kinect</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>LED Cube</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>LG 32&quot;</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Leap Motion</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mavic 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Myo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Oculus Rift</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Panono</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RaspberryPi</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RaspberryPi Cargador</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RaspberryPi Case</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SanDisk 32GB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sphero</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sphero Park</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sphero Ramps</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>iPhone SE</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>260</y>
+      <width>85</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Enviar</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>80</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Prestamo</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Devolucion</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>40</y>
+      <width>141</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Operación:</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

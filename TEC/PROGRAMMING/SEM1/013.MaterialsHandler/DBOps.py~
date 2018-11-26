@@ -1,11 +1,12 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
-#from time import sleep
 
-#TODO use a function to check if returning or loaning can be done
+# TODO use a function to check if returning or loaning can be done
+# These are the functions that interact with Firebase
 
-# Use the application default credentials
+# Sign in into Firebase with credentials provided in key.json
+# Keys.json is a service account key generated on the console
 def getdb():
     cred = credentials.Certificate("key.json")
     project_id = "materiales-7f32d"
@@ -16,7 +17,7 @@ def getdb():
     db = firestore.client()
     return db
 
-#Modify availability
+# Modify availability
 def modAvail(material, modifier):
     fbdb = getdb()
     material_ref = fbdb.collection(u'MATS').document(material)
@@ -26,7 +27,7 @@ def modAvail(material, modifier):
     avai += modifier
     material_ref.update({'Availability': avai})
 
-#Append to loaned
+#Append student to loaners list
 def loaner(name, ID, material):
     fbdb = getdb()
     material_ref = fbdb.collection(u'MATS').document(material)
@@ -35,6 +36,7 @@ def loaner(name, ID, material):
     entry = 'LoanedTo.' + ID
     material_ref.update({entry : name})
 
+# Remove student from loaners list
 def returner(name, ID, material):
     fbdb = getdb()
     material_ref = fbdb.collection(u'MATS').document(material)
@@ -43,6 +45,7 @@ def returner(name, ID, material):
     entry = 'LoanedTo.' + ID
     material_ref.update({entry : firestore.DELETE_FIELD})
 
+# Maintenance Function. Get element list from db
 def elementlist():
     fbdb = getdb()
     docs = fbdb.collection(u'MATS').get()
@@ -60,3 +63,32 @@ def elementlist():
 #sleep(5)
 #returner(db, ECHO, A019292, "MIKE")
 #modAvail(db, ECHO, 1)
+#APPLE WATCH
+#APPLETV
+#DJI PHANTOM QUADCOPTER
+#DOUBLE 2
+#DUALSHOCK 4
+#ECHO
+#FITBIT
+#GALAXY S7
+#GEAR VR
+#HDMI CABLE
+#IPHONE SE
+#KINECT
+#LEAP MOTION
+#LED CUBE
+#LG TV 32"
+#MICRO SD 32GB
+#MYO
+#OCULUS
+#PANONO
+#RASPBERRY PI 3
+#RASPBERRY PI 3 CASE
+#RASPBERRY PI CHARGER
+#SAMSUNG 360
+#SAMSUNG S2
+#SPHERO
+#SPHERO PARK
+#SPHERO RAMPS
+#STANDS
+#
