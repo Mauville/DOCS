@@ -1,0 +1,80 @@
+<!DOCTYPE XHTML>
+<html lang="en">
+    <head> 
+        <meta name="author" content="Vargas Perez Oscar">
+        <title>The best things in life are free</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <h1>Vargas Perez Oscar</h1> 
+        <h3>A01657110</h3> 
+        <img src="self.jpg" alt="Handsome Author of this sleazy page"width="300">
+        <p> Click on the image!</p>
+        <a href="2.html">
+        <img src="zoom_01.jpg" alt="A red geometrical figure" width="300px">
+        </a>
+        <ul>
+            <li>Info:</li>
+        <ul> 
+            <li>Name: Oscar</li>
+            <li>Surname: Vargas Perez</li>
+        </ul>
+
+        <li>Favourite Music:</li>
+        <ol>
+            <li>Beethoven - <a href="https://www.youtube.com/watch?v=FwZsDzGY1XA" target="_blank">"Hammerklavier"</a></li>
+            <li>Bach - <a href="https://www.youtube.com/watch?v=Q7VQWAILSbY" target="_blank">Komm süßer Tod, komm selge Ruh</a></li>
+        <li>Paco de Lucia -  <a href="https://www.youtube.com/watch?v=vwcujEv7cV8&" target="_blank">Entre dos aguas</a></li>
+        <li>John Williams (The one that plays the guitar) - <a href="https://www.youtube.com/watch?v=HDnYvIM9O5s" target="_blank">Prelude in G Minor</a></li>
+        <li>Wagner - <a href="https://www.youtube.com/watch?v=gzIRt_f7qWk" target="_blank">Elsa's Procession to the Cathedral</a></li>
+        </ol>
+
+
+        <li>Favourite Food:</li>
+        <ol type="a">
+        <li>Chilaquiles</li>
+        <li>Tacos</li>
+        <li>Pasta</li>
+        <li>Chilaquiles</li>
+        </ol>
+        </ul>
+        <table border="1"> 
+            <caption>My hideous table caption</caption>
+            <tr>
+                <td colspan="2" rowspan="2"></td>
+                <th colspan="2" rowspan="2">Column 1</th>
+                <th colspan="2">Column 2</th>
+            </tr>
+            <tr>
+                <th>Column 2a</th>
+                <th>Column 2b</th>
+            
+            </tr>
+            <tr>
+            
+                <th rowspan="2">Row 1</th>
+                <th>Row 1a</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+            <tr>
+            
+                <th>Row 1b</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+            <tr>
+            
+                <th colspan="2">Row 2</th>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+        </table>
+    </body>
+</html>

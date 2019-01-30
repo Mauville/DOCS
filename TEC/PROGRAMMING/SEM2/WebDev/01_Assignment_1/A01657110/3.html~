@@ -1,0 +1,14 @@
+
+<!DOCTYPE XHTML>
+<html lang="en">
+    <head> 
+        <meta name="author" content="Vargas Perez Oscar">
+        <title>If you can keep your head when all around you...</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <a href="4.html">
+        <img src="zoom_04.jpg" alt="A child staring at the surrealist cock" width="300px">
+        </a>
+    </body>
+</html>

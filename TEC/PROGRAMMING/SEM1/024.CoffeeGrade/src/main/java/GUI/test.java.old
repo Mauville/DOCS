@@ -1,0 +1,22 @@
+package GUI;
+
+public class test {
+    public static void main(String[] args) {
+
+        Student mark = new Student();
+        mark.setName("MARK");
+        mark.setHw1(89);
+        mark.setHw2(89);
+        mark.setHw3(89);
+        mark.setHw4(89);
+        mark.setPr1(89);
+        mark.setPr2(89);
+        mark.setFpr(89);
+        mark.setFex(89);
+        mark.setHwavg();
+        mark.setPravg();
+        mark.setFavg();
+
+
+    }
+}

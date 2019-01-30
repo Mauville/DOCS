@@ -1,0 +1,13 @@
+<!DOCTYPE XHTML>
+<html lang="en">
+    <head> 
+        <meta name="author" content="Vargas Perez Oscar">
+        <title>No man is an Island...</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <a href="2.html">
+        <img src="zoom_03.jpg" alt="A pretty surrealist cock" width="300px">
+        </a>
+    </body>
+</html>

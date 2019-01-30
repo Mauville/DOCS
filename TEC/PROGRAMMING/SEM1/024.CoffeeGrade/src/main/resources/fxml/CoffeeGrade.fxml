@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="865.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
+  <tabs>
+    <Tab closable="false" text="Spreadsheet">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableView" editable="true" layoutY="-4.0" prefHeight="498.0" prefWidth="809.0">
+                     <columns>
+                        <TableColumn fx:id="Student" onEditCommit="#changeStudentsnameCellEvent" prefWidth="280.0" text="Student" />
+                        <TableColumn fx:id="HW1" minWidth="0.0" onEditCommit="#changeHw1" prefWidth="45.0" text="HW1" />
+                        <TableColumn fx:id="HW2" onEditCommit="#changeHw2" prefWidth="45.0" text="HW2" />
+                        <TableColumn fx:id="HW3" onEditCommit="#changeHw3" prefWidth="45.0" text="HW3" />
+                        <TableColumn fx:id="HW4" onEditCommit="#changeHw4" prefWidth="45.0" text="HW4" />
+                        <TableColumn fx:id="PR1" onEditCommit="#changePr1" prefWidth="45.0" text="PR1" />
+                        <TableColumn fx:id="PR2" onEditCommit="#changePr2" prefWidth="45.0" text="PR2" />
+                        <TableColumn fx:id="FPR" onEditCommit="#changeFpr" prefWidth="45.0" text="FPR" />
+                        <TableColumn fx:id="FEX" onEditCommit="#changeFex" prefWidth="45.0" text="FEX" />
+                        <TableColumn fx:id="FNL" prefWidth="45.0" text="FNL" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="Calculator" layoutX="369.0" layoutY="496.0" mnemonicParsing="false" onAction="#lostFocus" text="Calculate" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab closable="false" text="Group Stats">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="538.0" layoutY="1.0" prefHeight="488.0" prefWidth="173.0">
+                     <children>
+                        <Label text="Group Average:">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Standard Deviation:">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Variance:">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Top 5">
+                           <padding>
+                              <Insets bottom="3.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <VBox prefHeight="136.0" prefWidth="251.0" visible="false">
+                           <children>
+                              <Label fx:id="Top1" text="Top 1" visible="false">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="Top2" text="Top 2" visible="false">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="Top3" text="Top 3" visible="false">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="Top4" text="Top 4" visible="false">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="Top5" text="Top 5" visible="false">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label text="Low5" visible="false">
+                           <padding>
+                              <Insets bottom="4.0" top="4.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <VBox layoutX="10.0" layoutY="166.0" prefHeight="136.0" prefWidth="251.0" visible="false">
+                           <children>
+                              <Label text="Low 5">
+                                 <padding>
+                                    <Insets bottom="3.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Low 4">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Low 3">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Low 2">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Low 1">
+                                 <padding>
+                                    <Insets bottom="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+                  <ScatterChart layoutX="14.0" layoutY="44.0" title="#TODO" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </ScatterChart>
+                  <VBox layoutX="711.0" layoutY="14.0" prefHeight="447.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="Act9Avg" text="Label">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act9Std" text="Label">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act9Var" text="Label">
+                           <padding>
+                              <Insets bottom="6.0" top="6.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab closable="false" text="Activity Stats">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="22.0" prefHeight="445.0" prefWidth="773.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                      <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="Homework 1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="170.0" layoutY="25.0" text="Homework 3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="63.0" text="Homework 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="393.0" layoutY="63.0" text="Homework 4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="393.0" layoutY="166.0" text="Partial 1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="269.0" text="Partial 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="393.0" layoutY="269.0" text="Final Project" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="25.0" layoutY="372.0" text="Final Exam" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Meiryo" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" text="Average" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" text="Variance" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" text="Std. Dev." GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" text="Variance" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" text="Std. Dev." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" text="Average" GridPane.columnIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="Act1Var" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="Act3Var" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="Act5Var" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="Act7Var" text="Label" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="Act2Avg" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act4Avg" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act6Avg" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act8Avg" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="Act2Std" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label fx:id="Act4Std" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Label fx:id="Act6Std" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Label fx:id="Act8Std" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                        <Label fx:id="Act2Var" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label fx:id="Act4Var" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                        <Label fx:id="Act6Var" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                        <Label fx:id="Act8Var" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                        <Label fx:id="Act1Std" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="Act3Std" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label fx:id="Act5Std" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Label fx:id="Act7Std" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Label fx:id="Act1Avg" text="Label" GridPane.rowIndex="1" />
+                        <Label fx:id="Act3Avg" text="Label" GridPane.rowIndex="2" />
+                        <Label fx:id="Act5Avg" text="Label" GridPane.rowIndex="3" />
+                        <Label fx:id="Act7Avg" text="Label" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="387.0" layoutY="466.0" prefHeight="17.0" prefWidth="32.0" text="#FDI">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="About">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="208.0" layoutY="260.0" prefHeight="200.0" prefWidth="394.0">
+                     <children>
+                        <Label prefHeight="36.0" text="Oscar Vargas Perez">
+                           <font>
+                              <Font name="Meiryo" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="36.0" text="A01657110">
+                           <font>
+                              <Font name="Meiryo" size="14.0" />
+                           </font>
+                        </Label>
+                        <Hyperlink text="4991127@outlook.com">
+                           <font>
+                              <Font name="Meiryo" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Hyperlink text="www.github.com/Mauville" />
+                        <Label prefHeight="36.0" text="2018">
+                           <font>
+                              <Font name="Meiryo" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="157.0" fitWidth="402.0" layoutX="204.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../logo.png" />
+                     </image></ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text=".this">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="433.0" fitWidth="565.0" layoutX="112.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../serveimage.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
