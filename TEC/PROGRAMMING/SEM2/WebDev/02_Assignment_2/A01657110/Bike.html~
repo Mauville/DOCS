@@ -9,8 +9,8 @@
         <table border="1" cellspacing="10" cellpadding="10">
 
             <tr>
-                        <td>TABLE 1 ROW 1 COL 1</td>
-                        <td>TABLE 1 ROW 1 COL 2</td>
+                        <td>ROW 1 COL 1</td>
+                        <td>ROW 1 COL 2</td>
                 <td>
                 <table border="1" cellspacing="10" cellpadding="10">
                     <tr>
