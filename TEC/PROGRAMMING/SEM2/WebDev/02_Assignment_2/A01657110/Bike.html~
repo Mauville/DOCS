@@ -1,0 +1,39 @@
+<!DOCTYPE XHTML>
+<html lang="en">
+    <head>
+        <meta name="author" content="Vargas Perez Oscar">
+<<<<<<< HEAD
+        <title> Vargas Perez Oscar A01657110</title>
+    </head>
+    <body>
+
+=======
+        <title> Vargas Perez Oscar | A01657110</title>
+    </head>
+    <body>
+        <h1>Bike search</h1> 
+        <table border="1" cellspacing="10" cellpadding="10">
+
+            <tr>
+                        <td>TABLE 1 ROW 1 COL 1</td>
+                        <td>TABLE 1 ROW 1 COL 2</td>
+                <td>
+                <table border="1" cellspacing="10" cellpadding="10">
+                    <tr>
+                        <td>
+                            the best
+                        </td>
+                        <td>
+                            the best
+                        </td>
+                        <td>
+                            the best
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+>>>>>>> 1f16f688986859e7348404c20aa84ee7c54bf5eb
+    </body>
+    
