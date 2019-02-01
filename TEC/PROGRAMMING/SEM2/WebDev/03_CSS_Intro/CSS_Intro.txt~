@@ -1,0 +1,15 @@
+To access and ID, you use #
+To accesss a class you use .
+to access a tag you use the tag name
+
+
+Absolute is the equivalent to moving some content to another layer
+
+Centering normals is just as easy as putting auto on side 2 and 4
+
+This works even for other devices
+
+Centering absolutes is a bit more complicated. 
+    
+    Move content in the webpage using top / left property 
+    Adjust said content using transform: transformX(50%)
