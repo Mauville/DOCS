@@ -1,13 +1,21 @@
-<!DOCTYPE XHTML>
+﻿<!DOCTYPE XHTML>
 <html lang="en">
     <head>
+
+        <meta charset="UTF-8">
         <meta name="author" content="Vargas Perez Oscar">
+        <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <title> Vargas Perez Oscar | A01657110</title>
-<style> .rowhead{font-weight:bold; align:center}
-</style>
     </head>
     <body>
+
         <h1>Bike search</h1> 
+
+        <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> <div class="snowflake"> ❆ </div> </div>
+
+        <marquee scrollamount="20"> Dear Visitor. This is my website, i hope you like it. Apparently, the marquee tag is deprecated. This is a clear indication that there are monkeys running the W3C. They even removed the blink tag!</marquee>
         <table border="10" cellspacing="10" cellpadding="10">
             <tr>
                 <td rowspan="2" colspan="2"><img src="img/bike.png" width="300px"><br /><img src="img/bike2.png" width="180px"><img src="img/bike3.png" width="100px"></td>
@@ -15,23 +23,23 @@
                 <table border="1">
                     <form>
                     <tr>
-                        <td class="rowhead">Type</td>
+                        <td id="data">Type</td>
                         <td><input type="radio" name="type" value="Road" >Road <br /> <input type="radio" name="type" value="Mountain" />Mountain</td>
                     </tr>
                     <tr>
-                        <td class="rowhead">Category</td>
+                        <td id="data">Category</td>
                         <td>
                             <select name="category">
                                 <option value="fitness">Fitness</option>
                                 <option value="Cross">Cross</option>
                                 <option value="Triatlon">Triatlon</option>
-                                <option value="Trace">Trac </option>
+                                <option value="Trace">Trace</option>
                             </select>
                             
                         </td>
                     </tr>
                     <tr>
-                        <td class="rowhead">Price</td>
+                        <td id="data">Price</td>
                         <td>
                             <input type="checkbox" name="price1" value="1500">&lt $1500</input><br />
                             <input type="checkbox" name="price2" value="2500">$1500 - $2500</input> <br />
@@ -41,14 +49,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="rowhead">Color</td>
+                        <td id="data">Color</td>
                         <td><input type="color" name="col"></input></td>
                     </tr>
                     <tr>
-                        <td colspan="2">---------------------------</td>
+                        <td colspan="2">------------------------------------------</td>
                     </tr>
                     <tr>
-                        <td class="rowhead" colspan="2">Contact Info</td>
+                        <td colspan="2" id="data">Contact Info</td>
                     </tr>
                     <tr>
                         <td colspan="2"><bdi><input type="text" placeholder="Name"></bdi></input></td>
@@ -64,7 +72,7 @@
                     </tr>
                     <tr>
                     <tr>
-                        <td class="rowhead">Birth Date:</td>
+                        <td id="data">Birth Date:</td>
                         <td><input type="date" name="born"></input></td>
                     </tr>
                     <tr>
@@ -331,7 +339,7 @@
                         <td><input type="text" size="14" placeholder="Phone"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">---------------------------</td>
+                        <td colspan="2">-----------------------------------------</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -342,5 +350,20 @@
                     </form>
         </table>
         </table>
+        <footer>
+            <figure>
+            <img src="img/notsupported.png" />
+            <figcaption>Install SerVmaX 2019 to run this plugin!</figcaption>
+        </figure>
+            <figure>
+            <img src="img/sidebar-uc.gif" />
+            <figcaption>Please check back later!</figcaption>
+        </figure>
+        <p>Follow me on <a href="https://myspace.com" target="_blank">MySpace!</a></p>
+        <p>Doing things the hard way(TM)</p>
+        <button href="datalist.html">Back to 2019</button>
+        <p>Use IE7 and change your screen resolution to 1600 x 1200 for the best user experience. </p>
+        <p id="credits">Snowflake CSS courtesy of <a href="https://pajasevi.github.io/CSSnowflakes">CSSnowflakes</a> Images and content from <a href="https://www.badhtml.com" target="_blank">badhtml.com</a></p>
+        </footer>
     </body>
     
