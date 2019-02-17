@@ -1,38 +1,33 @@
-public class BatSense extends Sensor {
+public class BatSense extends Android {
     public int maxCap, currentCap, minCap, stepstoDecrease, initialCap;
 
     public boolean canMove(int steps) {
-        //test case if battery after move is negative
-        // confirm battery decrease
-        // if true check percent
-        // if cap - perc < 0 print no
-        // else proceed
-
-        if ((Android.getSteps() + steps) % stepstoDecrease == 0)
-            if ()
-                return true
-        else
-                return false
+        boolean canmove = true;
+        //check if battery will decrease
+        if (steps % stepstoDecrease == 0) {
+            // Check if battery decrement goes beyond the negative
+            if (steps / stepstoDecrease >= currentCap)
+                canmove = false;
+        }
+        return canmove;
     }
 
-        if ((Android.getSteps() + steps) % stepstoDecrease == 0)
-    public void diminishcap() {
-        currentCap--;
+    public void computeSteps(int steps) {
+        currentCap -= steps / stepstoDecrease;
+        if (currentCap == 0)
+            recharge();
     }
 
     public void recharge() {
-        <++>
+        super.logger("BATT", "Battery depleted...");
         currentCap = maxCap;
+        super.logger("BATT", "The battery has recharged");
     }
 
-    public void battstats() {
-        <++>
-    }
+    public void diminisher(int steps) {
+        // how to know if battery should diminish
 
-    public void move() {
-        <++>
     }
-
 
     public int getMaxCap() {
         return maxCap;
@@ -44,33 +39,5 @@ public class BatSense extends Sensor {
 
     public int getCurrentCap() {
         return currentCap;
-    }
-
-    public void setCurrentCap(int currentCap) {
-        this.currentCap = currentCap;
-    }
-
-    public int getMinCap() {
-        return minCap;
-    }
-
-    public void setMinCap(int minCap) {
-        this.minCap = minCap;
-    }
-
-    public int getStepstoDecrease() {
-        return stepstoDecrease;
-    }
-
-    public void setStepstoDecrease(int stepstoDecrease) {
-        this.stepstoDecrease = stepstoDecrease;
-    }
-
-    public int getInitialCap() {
-        return initialCap;
-    }
-
-    public void setInitialCap(int initialCap) {
-        this.initialCap = initialCap;
     }
 }

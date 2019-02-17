@@ -46,19 +46,22 @@ Temp
 
 move x
     x = interpretLang(x)
-    if batt.canMove(x)== true
-        if temp.canMove(x) == true
-        addsteps(x)
-        move(x)
+    ####if batt.canMove(x)== true
+        ####if temp.canMove(x) == true
+        ####addsteps(x)
+        ####move(x)
         diminishBatt(x)
         increaseTemp(x)
 
         else
         logger( print cant move that amount, cool)
+        tempsense.cool
 
     else
         logger( print cant move that amount, recharge
+        battsense.recharge
 
+    }
 turn x
     x = interpretLang(x)
     rotate(x)
