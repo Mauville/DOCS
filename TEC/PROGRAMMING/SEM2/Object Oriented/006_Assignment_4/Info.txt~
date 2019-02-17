@@ -1,0 +1,7 @@
+A classroom has a maximum capacity, a subject, and a set of registered students.
+
+For every student store its ID, major and age.
+
+Build classes for the classroom and student objects.
+
+Then, build a main class and create a classroom object, three students and assign them into the classroom. Finally, add a method into the classroom class to determine the number of adult students registered.

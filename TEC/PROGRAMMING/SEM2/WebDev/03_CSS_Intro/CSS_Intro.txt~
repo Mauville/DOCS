@@ -13,3 +13,14 @@ Centering absolutes is a bit more complicated.
     
     Move content in the webpage using top / left property 
     Adjust said content using transform: transformX(50%)
+
+Use list inline block to make each item separate and nobrks
+
+
+
+Divide the thing in box models
+
+/* Look for mainvideo class and then look for the .videocontainer class. */
+#mainvideo .video-container{
+ /* if we changed the space for a sign, it will only select direct children from the containers */
+#mainvideo>.video-container

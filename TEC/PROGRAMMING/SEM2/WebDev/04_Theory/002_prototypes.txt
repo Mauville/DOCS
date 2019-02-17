@@ -1,0 +1,38 @@
+USE CASES
+
+BEST PROTOTYPE
+
+    Less time and most info collected
+
+    MAKE THOUGHTS TANGIBLE.
+        Create ideas, experimentation and comms
+
+    TEST
+        Get feedback from customers
+
+    PRESENT
+        
+        Communicate to stakeholders
+
+
+
+TYPES
+
+    VALUE
+
+        Proposition of value
+
+    LOOK AND FEEL
+            
+        What will it look like
+
+    IMPLEMETATION
+    
+        Possible to build?
+
+
+Low level prototype
+
+    Low fi
+        
+

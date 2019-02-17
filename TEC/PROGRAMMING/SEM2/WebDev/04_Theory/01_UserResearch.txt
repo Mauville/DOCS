@@ -1,0 +1,68 @@
+Serves to identify needs and preferences
+
+Clients don't know what they want
+
+
+WHY DO IT PROJECTS FAIL?
+
+    unclear objectives
+    misunderstanding
+
+
+FUNCTIONAL REQ
+    What it acutally needs to do.
+
+NON FUCTIONAL 
+    Things that arent so neccesary for the thing to work
+
+
+TO AVOID PROBLEMS
+        Listen to the client
+
+            Look at them in gesselle chamber
+            Interviews
+            Background research
+
+
+Most common methods
+
+    Ethnography
+
+            See the user in the natural 
+            
+    Feedback from Experts
+
+            Peer critique
+            Dogfooding
+                Use it on a daily basis yourself
+            Heuristic evaluation
+                Rules that the things must comply with
+                    Nielsen
+                    Schneidermann
+            
+
+
+PERSONAS
+
+    Goals 
+    Wants
+    Needs
+    Behaviour
+    Frustrations
+
+
+            Take target markets and create personas groups
+
+            Divide your groups to analyze the five above
+            
+            Based on research
+
+        A persona is not a demographic, stereotype and shouldnt be made upon instinct
+
+    Personas help to not designing for yourself
+
+    RELATED: Empathy Maps
+
+
+
+
