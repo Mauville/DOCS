@@ -1,0 +1,82 @@
+#main{
+    background-color:#f5f5f5;
+    max-width:960px;
+    margin:auto;
+    }
+#header{
+    width:960px;
+    height:160px;
+}
+#carrusel{
+    width:960px;
+    height:300px;
+    margin-bottom: 30px;
+}
+#products{
+    float: left;
+    margin-right:10px;
+
+}
+#side{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#store{
+    max-height:273px;
+    max-width:310px;
+    align-items:flex-end;
+}
+#map{
+    max-height:177px;
+    max-width:310px;
+    align-items:flex-end;
+}
+#prefooter{
+    display:flex;
+    margin-bottom: 30px;
+}
+#light{
+    max-height:450px;
+    max-width:312px;
+    margin-right:7px;
+}
+#access{
+    max-height:450px;
+    max-width:322px;
+    margin-right:7px;
+}
+#furn{
+    max-height:450px;
+    max-width:312px;
+}
+#footer{
+    margin-bottom:30px;
+}
+
+
+
+#barro{
+
+    height:150px;
+    width:232px;
+    margin-right:4px;
+}
+#talavera{
+
+    height:150px;
+    width:242px;
+    margin-right:4px;
+}
+#tejidos{
+
+    height:150px;
+    width:242px;
+    margin-right:4px;
+}
+#vidriosoplado{
+
+    height:150px;
+    width:232px;
+}
