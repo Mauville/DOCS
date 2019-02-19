@@ -1,6 +1,14 @@
 public class BatSense extends Android {
     public int maxCap, currentCap, minCap, stepstoDecrease, initialCap;
 
+    public BatSense(int maxCap, int minCap, int stepstoDecrease, int initialCap) {
+        this.maxCap = maxCap;
+        this.minCap = minCap;
+        this.stepstoDecrease = stepstoDecrease;
+        this.initialCap = initialCap;
+        this.currentCap = initialCap;
+    }
+
     public boolean canMove(int steps) {
         boolean canmove = true;
         //check if battery will decrease
@@ -19,22 +27,9 @@ public class BatSense extends Android {
     }
 
     public void recharge() {
-        super.logger("BATT", "Battery depleted...");
+        super.logger("BATT", "Battery depleted or manual recharge requested");
         currentCap = maxCap;
         super.logger("BATT", "The battery has recharged");
-    }
-
-    public void diminisher(int steps) {
-        // how to know if battery should diminish
-
-    }
-
-    public int getMaxCap() {
-        return maxCap;
-    }
-
-    public void setMaxCap(int maxCap) {
-        this.maxCap = maxCap;
     }
 
     public int getCurrentCap() {
