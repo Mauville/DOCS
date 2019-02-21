@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ae79f4e-fb9e-43fc-af8f-c56ce012b8fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Object Oriented/005_Android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Object Oriented/005_Android/Android.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/Android.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Object Oriented/005_Android/BatSense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/BatSense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Object Oriented/005_Android/TempSense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/TempSense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Object Oriented/005_Android/info" beforeDir="false" afterPath="$PROJECT_DIR$/../../Object Oriented/005_Android/info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_PseudoClasses/.PseudoClasses.txt.swp" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +21,7 @@
     <session id="1264516987">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -121,7 +124,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550447166243" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550458179607" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>

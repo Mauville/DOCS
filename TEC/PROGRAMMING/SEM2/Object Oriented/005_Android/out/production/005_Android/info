@@ -1,0 +1,69 @@
+You are asked to create a simulator of an android.
+
+For this, you need to store the number of steps. Additionally, store its current position (as x, y coordinates),
+and orientation (north, south, east, west). Besides, it is equipped with two sensors: one to measure
+the capacity of the battery, and another to measure its temperature.  The former sensor has an initial capacity,
+and every certain number of steps given by the robot, this capacity is diminished. When the battery capacity reaches a lower
+limit, the robot most recharge its battery.The latter sensor, stores the current robot’s temperature and the number of
+steps required to increase 1°C. It also has a temperature limit. When this is reached the robot most stop for 2 minutes
+to cool down.
+All the sensors can check up its status to determine if the robot can keep on working. They can also register a step
+given by the robot, and display its internal status. The android has a method to move to a given position, but
+the android can only walk in a straight line or turn 90° clock wise or counter clock wise.
+Build the class diagram, and implement the code. Display log information for every action performed by the robot
+
+
+Android
+    Steps
+    Position
+    move()
+    rotate()
+    logger()
+
+Sensor
+
+Batt
+    initial cap
+    diminishCap(
+    recharge()
+    battstats()
+    move()
+
+
+Temp
+    currenttemp
+    steps2increase
+    tempLimit
+    cooldown()
+    tempstats()
+    move()
+
+
+
+
+
+
+
+move x
+    x = interpretLang(x)
+    ####if batt.canMove(x)== true
+        ####if temp.canMove(x) == true
+        ####addsteps(x)
+        ####move(x)
+        diminishBatt(x)
+        increaseTemp(x)
+
+        else
+        logger( print cant move that amount, cool)
+        tempsense.cool
+
+    else
+        logger( print cant move that amount, recharge
+        battsense.recharge
+
+    }
+turn x
+    x = interpretLang(x)
+    rotate(x)
+
+
