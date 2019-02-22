@@ -31,8 +31,8 @@ TYPES
         Possible to build?
 
 
-Low level prototype
-
-    Low fi
-        
+INTERACTION DESIGN PROTS
+    Paper 
+    Wireframe
+    Functional
 
