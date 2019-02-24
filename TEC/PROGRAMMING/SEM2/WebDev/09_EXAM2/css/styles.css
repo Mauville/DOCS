@@ -1,0 +1,100 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+
+
+body{
+    background-color: black;
+    font-family: Roboto, sans-serif;
+    color: white;
+}
+header{
+    background-color: #202424;
+    height: 50px;
+}
+#logo{
+    font-size: 24px;
+    font-weight: 400;
+}
+#button{
+    font-weight: 300;
+    font-size: 14px;
+    background-color: #0074c2;
+    float: right;
+    margin-right: 50px;
+    text-align: center;
+    width: 135px;
+    height: 35px;
+}
+nav{
+    background-color: #141414;
+    height: 35px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+}
+li{
+    font-size: 12px;
+    padding: 15px;
+
+}
+#hl{
+    margin: auto, 14px, auto, 60px;
+    border-bottom: 3px solid #2eafff;
+}
+#slogan{
+    font-size: 50px;
+}
+main{
+    position: relative;
+    width: 330px;
+}
+form{
+    position: absolute;
+    top: 130px;
+    left: 120px;
+
+}
+.field{
+    height: 50px;
+    margin-top: 10px;
+    width: 180px;
+    border-radius: 4px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+div{
+    position: relative;
+    width: 100%;
+}
+p{
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    z-index: 100;
+}
+#submit{
+    font-family: inherit;
+    margin-top: 15px;
+    font-size: 24px;
+    color: inherit;
+    background-color: transparent;
+    border: solid white;
+    padding: 3px 10px 3px 10px;
+    border-radius: 44px;
+
+}
+aside{
+    position: relative ;
+    width: 100%;
+}
+video{
+    height: auto;
+    width: 750px;
+    position: absolute;
+    top: 90px;
+    right: 100px;
+    
+}

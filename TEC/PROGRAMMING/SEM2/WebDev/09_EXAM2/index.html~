@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Vargas Perez Oscar | A01657110</title>
+</head>
+
+<body>
+    <nav>
+        <picture>
+            <source src="img/100.png">
+            <img src="img/100.png" alt="placeholder">
+        </picture>
+        <ul id="bar">
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+            <li>
+                <++>
+            </li>
+        </ul>
+    </nav>
+    <section id="sect11">
+        <picture>
+            <source src="img/1544469908501.jpg">
+            <img class="img1" src="img/1544469908501.jpg" alt="<++>">
+        </picture>
+        <picture>
+            <source src="img/1545157318397.png">
+            <img class="img1" id="img2" src="img/1545157318397.png" alt="<++>">
+        </picture>
+    </section>
+    <section id="sect12">
+        <form action="get">
+            <table>
+                <tr>
+                    <td>
+                        <++>
+                    </td>
+                    <td>
+                        <++>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <++>
+                    </td>
+                    <td>
+                        <++>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <++>
+                    </td>
+                    <td>
+                        <++>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <++>
+                    </td>
+                    <td>
+                        <++>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>
