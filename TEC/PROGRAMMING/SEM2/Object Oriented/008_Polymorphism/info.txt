@@ -1,0 +1,17 @@
+
+
+Various communication service providers calculate their rates in a number different of ways.
+Infinitum takes into account the number of local calls, the band width (in Mbps), and the minutes of calls to cellular phones.
+    $ 1 per local call
+    $ 200 per 10Mbps and $10 for each additional Mbps
+    $ 1 per minute cell phone
+AT&T takes into account the additional services contracted. There is the possibility of including paid television and residential telephony.
+    $ 40 per 50Mbps and $10 additional for each 5 Mbps
+    $ 40 for the basic Paid TV, plus $10 for each premium channel
+    $ 20 per residential telephone service (unlimited calls)
+Axtel calculates its rates according to the chosen media and the required bandwidth
+    $ 350 per 20Mbps fiber optic bandwidth and $1 for each additional Mbps
+    $ 5000 per 10Mbps satellite and $10 for each additional Mbps
+    $ 20 for unlimited national telephony
+
+A company is interested in providing all this variety of services to its clients, keep a record of their choices, determine their monthly payments, and calculate the total income. For this you are asked to develop a system that allows the registration of clients and configure their internet service.

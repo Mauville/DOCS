@@ -1,0 +1,16 @@
+Client manager
+
+    Clients
+    Company
+    
+Services
+    
+    Internet
+    Tv
+    Telephone_local
+    Telephone_moblie
+
+NOUNS 
+    CSP
+    Rate
+    Infinitum
