@@ -11,4 +11,9 @@ public class SysClients {
         }
         return total;
     }
+
+    void configureInternet() {
+        //dummy
+    }
+
 }

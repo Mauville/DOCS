@@ -13,4 +13,8 @@ public class Client {
             this.monthlyPayment += t.getRate();
         }
     }
+
+    public double getMonthlyPayment() {
+        return monthlyPayment;
+    }
 }
