@@ -1,0 +1,88 @@
+= CLOUD SERVICES
+Vargas Perez Oscar <a01657110@itesm.mx>
+
+== Class Diagram
+[plantuml, diagram-classes, png]
+....
+class Service{
+~ {static} double baseprice
+~ {abstract} double getprice()
+}
+
+class Hosting{
+~ int bits
+~ int usage
+~ double getprice()
+}
+
+
+class Addon{
+~ boolean firsttime
+~ double getprice()
+}
+class WebApp{
+~ Date releaseDate
+~ int currentYear
+~ double getprice()
+}
+
+Service <|-- Addon
+Service <|-- Hosting
+Service <|-- WebApp
+
+....
+== Problem
+A cloud computing enterprise has multiple services to sale or rent. They sale Internet add-ons, and rent web applications and web hosting spots.  +
+Every service has a base price from which its sale or rent price is determined according to the following rules:
+
+** Internet add-ons
+*** Its price is 20% of the base price if it’s the first time the service is acquired, or 10% of the base price if the service has been previously bought.
+
+** Rented applications
+*** The monthly rate is 1% of the base price if the software was released this year; 0.9% if was released on the previous 3 years; 0.8% if was released more than 3 years ago.
+
+** Hosted applications
+*** The monthly rate depends on the disk space utilized and on the downloaded bits
+*** If it uses less than 100Mb the payment is for 1% of the base price. 0.5% of the base price is additionally charged per each extra 100Mb.
+*** If the downloaded bits are less than 1000 Mb, the rate is 2% of the base price. 1% of the base price is additionally charged per each extra 1000 Mb.
+
+== Classes
+.SERVICE abstract
+[source,java]
+    double basePrice
+    price()
+
+
+.ADDON extends Service
+[source,java]
+    boolean firstTime
+    price(boolean fisrtTime)
+        disc
+
+.WEBAPP extends Service
+[source,java]
+    Date releaseDate
+    price(Date releaseDate)
+        if 1
+        if 2
+        if 3
+
+.HOSTING extends Service
+[source,java]
+
+   int usage
+   int bits
+   price(int usage,  int  bits)
+        xtraMb = (usage - 100 )%100
+        xtrabits = (bits - 1000)%1000 
+        xtraMBprice = super.basePrice *.01 + xtraMb*(super.basePrice*.005)
+        xtraBitPrice = super.basePrice *.02 + xtraMb*(super.basePrice*.01)
+        return (xtraMbprice+xtraBitPrice)
+
+== Instructions
+
+    * Build a class diagram
+    * Implement the classes
+    * Build a demo class to show each service working
+
+
