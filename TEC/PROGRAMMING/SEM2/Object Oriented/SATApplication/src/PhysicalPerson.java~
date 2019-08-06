@@ -1,0 +1,58 @@
+public class PhysicalPerson extends  Person implements  IKey{
+    private String name, paternalLastName, maternalLastName, cityCode, gender;
+
+    public String calculateRFC() {
+        String rfc = "";
+        rfc +=paternalLastName.substring(0,2);
+        rfc +=maternalLastName.charAt(0);
+        rfc+= name.charAt(0);
+        rfc += year.substring(2);
+        rfc += month;
+        rfc += day;
+        return rfc;
+    }
+    public String calculateCURP() {
+        String curp = "";
+        return curp;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPaternalLastName() {
+        return paternalLastName;
+    }
+
+    public void setPaternalLastName(String paternalLastName) {
+        this.paternalLastName = paternalLastName;
+    }
+
+    public String getMaternalLastName() {
+        return maternalLastName;
+    }
+
+    public void setMaternalLastName(String maternalLastName) {
+        this.maternalLastName = maternalLastName;
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+}

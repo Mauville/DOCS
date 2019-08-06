@@ -1,0 +1,176 @@
+html {
+    height: 100%;
+}
+
+body{
+    font-family: 'Raleway';
+    margin: 0;
+    background: #333 url('../img/bg.jpg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
+.group{
+    border: 1px solid black;
+    padding: 20px 60px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#pos-1, #pos-2, #pos-3, #pos-4{
+    margin-bottom: 30px;
+}
+
+.arrow-down{
+    display: block;
+    float: right;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: url('../img/arrow-down.jpg');
+    background-size: cover;
+}
+.arrow-up{
+    display: block;
+    float: right;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: url('../img/arrow-up.jpg');
+    background-size: cover;
+}
+
+.flag{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.name{
+    display: inline-block;
+    width: 347px;
+    height: 80px;
+    margin-left: 30px;
+}
+
+#pos-1 .arrow-2,
+#pos-4 .arrow-7{
+    opacity: 0.2;
+}
+
+.arrow-1, .arrow-3, .arrow-4, .arrow-5, .arrow-6, .arrow-8{
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease-in;
+}
+
+.arrow-1:hover, .arrow-3:hover, .arrow-4:hover, .arrow-5:hover, .arrow-6:hover, .arrow-8:hover{
+    opacity: 1;
+}
+
+.colombia .flag{
+    background: url('../img/Colombia-Flag.jpg');
+    background-size: cover;
+}
+
+.colombia .name{
+    background: url('../img/Colombia-Text.png');
+    background-size: cover;
+}
+
+
+.poland .flag{
+    background: url('../img/Poland-Flag.jpg');
+    background-size: cover;
+}
+
+.poland .name{
+    background: url('../img/Poland-Text.png');
+    background-size: cover;
+}
+
+.senegal .flag{
+    background: url('../img/Senegal-Flag.jpg');
+    background-size: cover;
+}
+
+.senegal .name{
+    background: url('../img/Senegal-Text.png');
+    background-size: cover;
+}
+
+.tahiti .flag{
+    background: url('../img/Tahiti-Flag.jpg');
+    background-size: cover;
+}
+
+.tahiti .name{
+    background: url('../img/Tahiti-Text.png');
+    background-size: cover;
+}
+@media only screen and (max-width: 1000px) {
+    #wrapper{
+        width: 100%;
+    }
+    .group{
+        width: 90%;
+        padding: 3vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .name{
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        height: 10vh;
+        width: 30vw;
+        background-position: center !important;
+    }
+    .flag{
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        height: 10vw;
+        width: 10vw;
+    }
+    .arrow-down, .arrow-up{
+        height: 10vw;
+        width: 10vw;
+    }
+    .arrow-down{
+        margin-left: 20vw;
+    }
+    .arrow-up{
+        margin-left: 3vw;
+    }
+    #pos-1, #pos-2, #pos-3, #pos-4{
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        margin-bottom: 0;
+    }
+    h2{
+        font-size:3vw;
+    }
+
+}

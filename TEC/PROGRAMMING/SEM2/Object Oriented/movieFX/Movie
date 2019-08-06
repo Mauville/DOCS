@@ -1,0 +1,6 @@
+public class Movie{
+private String title, director, duration, year, classification;
+
+//generate setters and getters gere
+
+}

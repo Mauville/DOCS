@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/store.everything.min.js"></script>
+
+    <style>
+        .foco {
+            width: 150px;
+            height: 300px;
+            background-color: #ccc;
+            text-align: center;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+
+        .bulb {
+            width: 150px;
+            height: 150px;
+            background: url('img/lightbulb-off.png');
+        }
+
+        .bulb on {
+            background: url('img/lightbulb-on.png');
+        }
+
+        .switch {
+            width: 150px;
+            height: 75px;
+            background: url('img/sprite.jpg');
+            background-size: 100%;
+            background-position: 0 100%;
+            cursor: pointer;
+        }
+
+        .switch on {
+            background-position: 0 0;
+        }
+
+        #locationInput,
+        #addLightbulb {
+            width: 80%;
+            display: block;
+            margin: 30px auto;
+            font-size: 24px;
+            background-color: #dddddd;
+            border: 1px solid #aaa;
+            padding: 20px;
+            box-sizing: border-box
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="foco">
+
+    </div>
+
+    <input type="text" id="locationInput">
+    <input type="button" id="Addlightbulb" value="Add Lightbulb">
+    <div id="container"></div>
+
+    <script>
+        if (store.get("totalBulbs") == undefined) {
+            store.set("totalBulbs", 0)
+        }
+        else {
+
+        }
+        $('#Addlightbulb').on('click', function () {
+            store.set("totalBulbs", store.get("totalBulbs") + 1);
+            store.set("lightbulb-" + store.get("totalBulbs"), {
+                state: "OFF",
+                location: $("#locationInput").val()
+            }
+            )
+        });
+        function displayBulbs() {
+            var tot = store.get("totalBulbs");
+
+            $("#container").empty();
+
+            for (i = 1; i <= tot; i++) {
+                var lb = store.get("lightbulb-" + i);
+                $('#container').append(`
+                <div class="bulb"></div>
+                    <div class="switch data-lb="${lightbulb-}"></div>
+                    <h1>${lb.location}</h1>
+                `)
+            }
+
+            displayBulbs();
+            $('body').on('click', '.switch', function () {
+                store.update("state","ON");
+            })
+        }
+
+    </script>
+</body>
+
+</html>
